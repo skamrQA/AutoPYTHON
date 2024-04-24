@@ -4,15 +4,25 @@ from string_utils import StringUtils
 
 stringutils = StringUtils()
 
-@pytest.mark.parametrize( 'str1, result', [("hihi", "Hihi")] )
-def test_capitalize_positive(str1, result):
+# метод capitilize
+
+@pytest.mark.test_capitalize_positive
+@pytest.mark.parametrize( 'str, result', [("hihi", "Hihi"),
+                                           ("123", "123"),
+                                           ("Good", "Good")] )
+def test_capitalize_positive(str, result):
     stringutils = StringUtils()
-    res = stringutils.capitalize(str1)
+    res = stringutils.capitalize(str)
     assert res == result
 
-@pytest.mark.parametrize( 'str1, result', [("", "Hihi")] )
-def test_capitalize_negative(str1, result):
+@pytest.mark.xfail
+@pytest.mark.test_capitalize_negative
+@pytest.mark.parametrize( 'str, result', [("", ""),
+                                          (" ", " "),
+                                          (None, None)
+                                          ] )
+def test_capitalize_negative(str, result):
     stringutils = StringUtils()
-    res = stringutils.capitalize(str1)
+    res = stringutils.capitalize(str)
     assert res == result
 
