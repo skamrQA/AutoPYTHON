@@ -40,10 +40,10 @@ def test_trim_positive(str, result):
 
 @pytest.mark.xfail
 @pytest.mark.trim_test_negative
-@pytest.mark.parametrize( 'str, result', [(   123, 123),
-                                          (" S u n", "Sun"),
-                                          (" G ood", "Good"),
-                                          (" Работ а", "Работа")
+@pytest.mark.parametrize( 'str, result', [(123   , 123),
+                                          ("S u n ", "Sun"),
+                                          ("G ood ", "Good"),
+                                          ("Работа ", "Работа")
                                           ] )
 def test_trim_negative(str, result):
     stringutils = StringUtils()
@@ -53,7 +53,7 @@ def test_trim_negative(str, result):
 # метод to_list
     
 @pytest.mark.to_list_test_positive
-@pytest.mark.parametrize( 'str, delim, result', [("1,2,3", ",", ["1", "2", "3"])])
+@pytest.mark.parametrize( 'str, delim, result', [("1:2:3", ":", ["1", "2", "3"])])
 def test_to_list_positive(str, delim, result):
     stringutils = StringUtils()
     res = stringutils.to_list(str, delim)
@@ -61,7 +61,7 @@ def test_to_list_positive(str, delim, result):
 
 @pytest.mark.xfail
 @pytest.mark.to_list_test_negative
-@pytest.mark.parametrize( 'str, delim, result', [(" , , ", ",", [" ", " ", " "])] )
+@pytest.mark.parametrize( 'str, delim, result', [(" , , ", ",", [' ', ' ', ' '])] )
 def test_to_list_negative(str, delim, result):
     stringutils = StringUtils()
     res = stringutils.to_list(str, delim)
