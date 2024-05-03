@@ -41,7 +41,7 @@ sleep(5)
 
 #собрать со странички список кнопок
 
-delete_button = driber.find_elements(By.XPHATH, '//button[contains(tesxt(),"Delete")]')
+delete_button = driver.find_elements(By.XPHATH, '//button[contains(tesxt(),"Delete")]')
 
 
 #вывести на экран размер списка \
