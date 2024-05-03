@@ -1,4 +1,3 @@
-#открыть страничку в Chrome 
 from selenium import webdriver 
 from time import sleep
 from selenium.webdriver.chrome.service import Service as ChromeService

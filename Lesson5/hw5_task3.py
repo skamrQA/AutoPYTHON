@@ -34,23 +34,15 @@ driver.quit()
 
 # кликнуть на кнопку Add Element 5 раз
 
-# for n in range(5):
-# 	button.click()
-# 	sleep(1)
-# sleep(5)
+for n in range(5):
+	button.click()
+	sleep(1)
+sleep(5)
 
 #собрать со странички список кнопок
 
-<<<<<<< HEAD
-# delete_button = driver.find_elements(By.XPATH, '//button[contains(text(),"Delete")]')
-
-
-#вывести на экран размер списка \
-# print(f"Paзмep списка", {len(delete_button)}) 
-=======
-delete_button = driver.find_elements(By.XPHATH, '//button[contains(tesxt(),"Delete")]')
+delete_button = driver.find_elements(By.XPATH, '//button[contains(text(),"Delete")]')
 
 
 #вывести на экран размер списка \
 print(f"Paзмep списка", {len(delete_button)}) 
->>>>>>> 303f46c66ebc7b6b9e284493d846fc82ae232a33
