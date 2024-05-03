@@ -9,7 +9,7 @@ driver = webdriver.Chrome()
 # открыть ссылку
 driver.get("http://the-internet.herokuapp.com/inputs")
 Element = 'input'
-driver.findelement(By.CSSSELECTOR, Element).click()
+click = driver.find_element(By.CSS_SELECTOR, Element)
 click.send_keys("1000")
 sleep(2)
 click.clear()
