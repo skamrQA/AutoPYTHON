@@ -41,8 +41,16 @@ driver.quit()
 
 #собрать со странички список кнопок
 
+<<<<<<< HEAD
 # delete_button = driver.find_elements(By.XPATH, '//button[contains(text(),"Delete")]')
 
 
 #вывести на экран размер списка \
 # print(f"Paзмep списка", {len(delete_button)}) 
+=======
+delete_button = driver.find_elements(By.XPHATH, '//button[contains(tesxt(),"Delete")]')
+
+
+#вывести на экран размер списка \
+print(f"Paзмep списка", {len(delete_button)}) 
+>>>>>>> 303f46c66ebc7b6b9e284493d846fc82ae232a33
