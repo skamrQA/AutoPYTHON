@@ -12,7 +12,7 @@ button = driver.find_element(By.XPATH, Add_Element)
 
 # кликнуть на кнопку Add Element 5 раз
 
-for n in range(S): 
+for n in range(5): 
 	button.click() 
 	sleep(1) 
 sleep(5)
