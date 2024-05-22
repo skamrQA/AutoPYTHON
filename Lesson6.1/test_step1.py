@@ -18,7 +18,7 @@ def test_submit_form():
     driver = webdriver.Chrome()
     # Открытие сайта
     driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")
-    sleep(1)
+    
 
     # Заполнение формы
     driver.find_element(By.CSS_SELECTOR, 'input[name="first-name"]').send_keys("Иван")
