@@ -1,8 +1,14 @@
+from selenium.webdriver.common.by import By	
+from selenium.webdriver.support.ui import WebDriverWait	
+from selenium.webdriver.support import expected_conditions as EC
+from Lesson7.constants import Test_form_URL
+from Lesson7.step2.step2_data import *
+
 class MainPage:
 
     def __init__(self, driver):
         self._driver = driver
-        self._driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html") # Открытие сайта
+        self._driver.get(Test_form_URL) # Открытие сайта
         self._driver.implicitly_wait(4) #WebDriver будет ждать до 4 секунд, прежде чем выбросить исключение
         self._driver.maximize_window() #Максимизирует окно браузера.
 
@@ -15,16 +21,16 @@ class MainPage:
 
     def submit_form(self):
         # Заполнение формы
-        self._driver.find_element(By.CSS_SELECTOR, 'input[name="first-name"]').send_keys("Иван")
-        self._driver.find_element(By.CSS_SELECTOR, 'input[name="last-name"]').send_keys("Петров")
-        self._driver.find_element(By.CSS_SELECTOR, 'input[name="address"]').send_keys("Ленина, 55-3")
-        self._driver.find_element(By.CSS_SELECTOR, 'input[name="e-mail"]').send_keys("test@skypro.com")
-        self._driver.find_element(By.CSS_SELECTOR, 'input[name="phone"]').send_keys("+7985899998787")
+        self._driver.find_element(By.CSS_SELECTOR, 'input[name="first-name"]').send_keys(first_name)
+        self._driver.find_element(By.CSS_SELECTOR, 'input[name="last-name"]').send_keys(last_name)
+        self._driver.find_element(By.CSS_SELECTOR, 'input[name="address"]').send_keys(address)
+        self._driver.find_element(By.CSS_SELECTOR, 'input[name="e-mail"]').send_keys(e_mail)
+        self._driver.find_element(By.CSS_SELECTOR, 'input[name="phone"]').send_keys(phone)
         # Zip code оставляем пустым
-        self._driver.find_element(By.CSS_SELECTOR, 'input[name="city"]').send_keys("Москва")
-        self._driver.find_element(By.CSS_SELECTOR, 'input[name="country"]').send_keys("Россия")
-        self._driver.find_element(By.CSS_SELECTOR, 'input[name="job-position"]').send_keys("QA")
-        self._driver.find_element(By.CSS_SELECTOR, 'input[name="company"]').send_keys("SkyPro")
+        self._driver.find_element(By.CSS_SELECTOR, 'input[name="city"]').send_keys(city)
+        self._driver.find_element(By.CSS_SELECTOR, 'input[name="country"]').send_keys(country)
+        self._driver.find_element(By.CSS_SELECTOR, 'input[name="job-position"]').send_keys(job_position)
+        self._driver.find_element(By.CSS_SELECTOR, 'input[name="company"]').send_keys(company)
         # Нажатие кнопки Submit
         self._driver.find_element(By.TAG_NAME, "button").click()
 
