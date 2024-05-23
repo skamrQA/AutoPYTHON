@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-from pages.MainPage import MainPage
+from Lesson7.step2.pages.FormMainPage import MainPage
 
 @pytest.fixture(scope="module")
 def driver():

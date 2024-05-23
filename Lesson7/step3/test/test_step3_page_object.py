@@ -1,4 +1,4 @@
-from Lesson7.step3.pages.MainPage import CalcMain
+from Lesson7.step3.pages.CalcMainPage import CalcMain
 
 
 def test_slow_calculator_assert(chrome_browser):
