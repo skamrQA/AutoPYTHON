@@ -1,3 +1,4 @@
+import time
 from selenium.webdriver.common.by import By	
 from selenium.webdriver.support.ui import WebDriverWait	
 from selenium.webdriver.support import expected_conditions as EC
@@ -21,3 +22,8 @@ class CalcMain:
             for button in buttons:
                 if button.text == button_text:
                     button.click()
+        time.sleep(45)
+
+    def check(self):
+        self.browser.find_element(By.CSS_SELECTOR, "div.screen").text
+        return self.browser.find_element(By.CSS_SELECTOR, "div.screen").text

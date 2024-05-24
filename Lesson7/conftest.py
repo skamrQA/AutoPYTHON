@@ -1,5 +1,6 @@
 import pytest	
 from selenium import webdriver # импорт драйвера
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 @pytest.fixture()

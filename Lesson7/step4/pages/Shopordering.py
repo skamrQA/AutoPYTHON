@@ -21,6 +21,8 @@ class ShopOrdering:
     # Проверка итоговой суммы
     def check_quit(self):
         total_amount = WebDriverWait(self.browser, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, ".summary_total_label")))
-        assert total_amount.text == "Total: $58.29", "Итоговая сумма не соответствует ожидаемой"
-    # Закрытие браузера
+        total = total_amount.text.strip().replace("Total: $", "")
+        return total
+            # Закрытие браузера
+
         self.browser.quit()

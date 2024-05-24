@@ -13,7 +13,6 @@ def test_shop(chrome_browser):
     cart = ShopOrdering(chrome_browser)
     cart.checkout()
     cart.fill_in()
-    cart.check_quit()
-
-    assert expected_total in cart.check_quit
+    
+    assert expected_total in cart.check_quit()
     print(f"Итоговая сумма равна ${cart.check_quit()}")

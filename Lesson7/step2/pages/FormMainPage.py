@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from Lesson7.constants import Test_form_URL
 from Lesson7.step2.step2_data import *
 
+
 class MainPage:
 
     def __init__(self, driver):
@@ -24,7 +25,7 @@ class MainPage:
         self._driver.find_element(By.CSS_SELECTOR, 'input[name="first-name"]').send_keys(first_name)
         self._driver.find_element(By.CSS_SELECTOR, 'input[name="last-name"]').send_keys(last_name)
         self._driver.find_element(By.CSS_SELECTOR, 'input[name="address"]').send_keys(address)
-        self._driver.find_element(By.CSS_SELECTOR, 'input[name="e-mail"]').send_keys(e_mail)
+        self._driver.find_element(By.CSS_SELECTOR, 'input[name="e-mail"]').send_keys(email)
         self._driver.find_element(By.CSS_SELECTOR, 'input[name="phone"]').send_keys(phone)
         # Zip code оставляем пустым
         self._driver.find_element(By.CSS_SELECTOR, 'input[name="city"]').send_keys(city)
@@ -35,7 +36,7 @@ class MainPage:
         self._driver.find_element(By.TAG_NAME, "button").click()
 
     def check(self):
-            # Проверки (asserts)
+        # Проверки (asserts)
         assert "alert py-2 alert-danger" in self._driver.find_element(By.CSS_SELECTOR, "#zip-code").get_attribute("class"), "Zip code field is not highlighted in red."
         for field_id in ["first-name",
                      "last-name",
