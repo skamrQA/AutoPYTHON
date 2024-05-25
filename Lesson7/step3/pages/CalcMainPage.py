@@ -14,7 +14,7 @@ class CalcMain:
         delay_input.clear()
         delay_input.send_keys("45")
     
-    def click_button(self):
+    def click_button_wait(self):
         # Нажимаем на кнопки 7, +, 8, =
         buttons_to_click = ["7", "+", "8", "="]
         for button_text in buttons_to_click:
@@ -22,8 +22,9 @@ class CalcMain:
             for button in buttons:
                 if button.text == button_text:
                     button.click()
-        time.sleep(45)
+        WebDriverWait(self.browser, 46).until(EC.text_to_be_present_in_element((By.CLASS_NAME, "screen"), "15"))
 
+        
     def check(self):
         self.browser.find_element(By.CSS_SELECTOR, "div.screen").text
         return self.browser.find_element(By.CSS_SELECTOR, "div.screen").text
